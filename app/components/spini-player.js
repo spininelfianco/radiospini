@@ -83,8 +83,10 @@ function SpiniPlayer(cp) {
         .then((data) => {
           const {artist, title} = data;
           if ((artist && artist !== radioDisplay.artist) || (title && title !== radioDisplay.title)) {
+            radioDisplay.cover = defaultDisplay.cover;
             radioDisplay.artist = artist;
             radioDisplay.title = title;
+            refreshDisplay();
             getArtwork(artist, title);
           }
           setTimeout(getStreamInfo, 10000);
@@ -103,8 +105,6 @@ function SpiniPlayer(cp) {
         .then((data) => {
           if (data.imageUrl) {
             radioDisplay.cover = data.imageUrl;
-          } else {
-            radioDisplay.cover = defaultDisplay.cover;
           }
           refreshDisplay();
         })
@@ -113,7 +113,6 @@ function SpiniPlayer(cp) {
           if (retry < 4) {
             setTimeout(() => getArtwork(artist, title, ++retry), 2000);
           }
-          radioDisplay.cover = defaultDisplay.cover;
           refreshDisplay();
         });
   }
