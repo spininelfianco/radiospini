@@ -149,6 +149,17 @@ function SpiniPlayer(cp) {
         el.removeClass('on');
       }
     });
+    // update track info on mobile browsers
+    if ('mediaSession' in navigator) {
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: radioDisplay.title,
+        artist: radioDisplay.artist,
+        album: 'RadioSpini',
+        artwork: [
+          {src: radioDisplay.cover, sizes: '300x300', type: 'image/jpg'}
+        ]
+      });
+    }
   }
 }
 
