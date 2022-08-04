@@ -4,7 +4,7 @@ function SpiniPlayer(cp) {
   let trackArtist;
   let trackTitle;
   const defaultDisplay = {
-    cover: '/app/components/spini-player.png',
+    cover: zuix.store('config').resourcePath + 'components/spini-player.png',
     artist: '@RadioSpini',
     title: 'Radio SpiniNelFianco'
   };
