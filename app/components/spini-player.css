@@ -23,11 +23,13 @@ label {
 }
 
 .controls {
-    width: 360px;
+    min-width: 360px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 24px;
     gap: 12px;
 }
 .controls button {
-    margin-top: 24px;
     border-radius: 30%;
     border: none;
     outline: none;
