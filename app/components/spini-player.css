@@ -1,3 +1,7 @@
+:host a {
+    text-decoration: none;
+    color: green;
+}
 label {
     font-size: 70%;
     text-transform: uppercase;
@@ -23,7 +27,7 @@ label {
 }
 
 .controls {
-    min-width: 360px;
+    min-width: 390px;
     padding-left: 12px;
     padding-right: 12px;
     padding-top: 24px;
