@@ -1,0 +1,62 @@
+<audio #player>
+    <source src="https://stream.zeno.fm/rcu55zb1sxhvv" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<div layout="rows stretch-center" style="gap: 24px;">
+
+    <div>
+        <img #cover class="cover-image">
+    </div>
+
+    <div self="size-x1" layout="columns justify-center">
+
+        <div class="stream-info">
+            <div>
+                <label class="accent">Artist</label>
+            </div>
+            <div #track-artist class="info-text">&nbsp;</div>
+            <div style="margin-top: 24px">
+                <label class="accent">Title</label>
+            </div>
+            <div #track-title class="info-text">&nbsp;</div>
+        </div>
+
+        <div layout="row center-center" class="controls">
+
+            <button #btn-play>
+                <i class="material-icons">play_arrow</i>
+            </button>
+            <button #btn-pause>
+                <i class="material-icons">pause</i>
+            </button>
+
+            <div style="position: relative">
+                <button #btn-volume>
+                    <i class="material-icons">volume_up</i>
+                </button>
+                <button #btn-unmute>
+                    <i class="material-icons">volume_off</i>
+                </button>
+
+                <div #btn-volume-set class="volume-level">
+                    <div class="volume-tick" volume="10"></div>
+                    <div class="volume-tick" volume="9"></div>
+                    <div class="volume-tick" volume="8"></div>
+                    <div class="volume-tick" volume="7"></div>
+                    <div class="volume-tick" volume="6"></div>
+                    <div class="volume-tick" volume="5"></div>
+                    <div class="volume-tick" volume="4"></div>
+                    <div class="volume-tick" volume="3"></div>
+                    <div class="volume-tick" volume="2"></div>
+                    <div class="volume-tick" volume="1"></div>
+                    <i class="material-icons" #btn-mute style="width: 40px; padding: 8px;">volume_off</i>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
