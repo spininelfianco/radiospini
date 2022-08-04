@@ -56,8 +56,8 @@ function SpiniPlayer(cp) {
       }
     });
     volumeControl.find('.volume-tick').on({
-      pointerdown: (a, b, c) => {
-        audioPlayer.volume = +b.attr('volume') / 10;
+      pointerdown: (event, $el) => {
+        audioPlayer.volume = +$el.attr('volume') / 10;
         refreshDisplay();
         setTimeout(() => volumeControl.hide(), 300);
       }
@@ -143,10 +143,10 @@ function SpiniPlayer(cp) {
     // refresh volume ticks
     const volume = audioPlayer.volume * 10;
     volumeControl.find('.volume-tick').each((i, e, el) => {
-      if (10-i <= volume) {
-        el.addClass('on');
+      if ((10-i) <= volume) {
+        el.children().addClass('on');
       } else {
-        el.removeClass('on');
+        el.children().removeClass('on');
       }
     });
     // update track info on mobile browsers
