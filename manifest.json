@@ -5,7 +5,7 @@
   "theme_color": "#178038",
   "background_color": "#dafee4",
   "display": "standalone",
-  "Scope": "./",
+  "Scope": "/radiospini/",
   "start_url": "index.html",
   "icons": [
     {
