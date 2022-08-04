@@ -45,21 +45,23 @@ label {
 }
 .volume-level {
     position: absolute;
-    top: -200px; left: 12px;
+    top: -220px; left: 12px;
     text-align: center;
     background: inherit;
 }
-.volume-tick.on {
-    background-color: chartreuse;
-}
 .volume-tick {
     cursor: pointer;
-    background-color: gray;
+    background-color: #aaaaaaaa;
+}
+.volume-tick .bar {
     border: solid 1px;
     border-radius: 4px;
     width: 48px;
     height: 16px;
-    margin-bottom: 2px;
+    margin: 1px;
+}
+.volume-tick .bar.on {
+    background-color: chartreuse;
 }
 
 .cover-image {
@@ -69,4 +71,3 @@ label {
     border-radius: 4px; border: solid 1px gainsboro;
     box-shadow: 0 0 20px 2px #aaaaaaaa;
 }
-
