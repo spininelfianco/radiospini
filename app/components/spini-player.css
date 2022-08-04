@@ -4,7 +4,7 @@ label {
     font-family: monospace;
     font-weight: bold;
     display: block;
-    color: yellow;
+    opacity: 0.4;
     margin-bottom: 6px;
 }
 .info-text {
