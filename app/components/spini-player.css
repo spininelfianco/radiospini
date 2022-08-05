@@ -1,6 +1,6 @@
 :host a {
   text-decoration: none;
-  color: green;
+  color: limegreen;
 }
 label {
   font-size: 70%;
@@ -81,12 +81,17 @@ label {
   overflow-y: auto;
 }
 [z-field='menu'] label {
+  font-size: 80%;
+  font-weight: bold;
   text-align: center;
-  color: initial;
-  background-color: #aaaaaaaa;
+  color: white;
+  background-color: #000000dd;
   margin-top: 6px;
   margin-bottom: 6px;
   padding: 4px;
+}
+[z-field='menu'] label:first-child {
+  margin-top: 0;
 }
 [z-field='menu'] button {
   cursor: pointer;

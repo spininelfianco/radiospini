@@ -2,7 +2,7 @@
   "name": "Radio SpiniNelFianco",
   "short_name": "RadioSpini",
   "description": "SpiniNelFianco new & radio",
-  "theme_color": "#000000",
+  "theme_color": "#222222",
   "background_color": "#dafee4",
   "display": "standalone",
   "Scope": "./",

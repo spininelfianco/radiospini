@@ -73,9 +73,16 @@ body {
 }
 
 /* ------ CONTEXT MENU ------ */
-.theme-dark [z-load*='/components/context-menu'] .menu {
+.theme-dark [z-load*='components/context-menu'] .menu {
   background: #444 !important;
 }
-.theme-dark [z-load*='/components/context-menu'] .container {
+.theme-dark [z-load*='components/context-menu'] .container {
   background: rgba(0, 0, 0, 0.65) !important;
+}
+.theme-dark [z-load*='components/context-menu'] .menu button:not([disabled]) i {
+  color: white;
+}
+
+[z-load*='components/context-menu'] .menu button[disabled] i {
+  opacity: 0.5;
 }
