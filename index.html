@@ -1,67 +1,122 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-   <head>
-      <title>RadioSpini</title>
-      <meta charset="utf-8">
-   
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="description" content="Radio">
-      <meta name="keywords" content="blog,radio,live,playlist,lifestyle" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      
-      <!-- Progressive Web App -->
-      <meta name="theme-color" content="white">
-      <link rel="manifest" href="./manifest.json">
-      <!-- Add to homescreen for Chrome on Android -->
-      <meta name="mobile-web-app-capable" content="yes">
-      <link rel="icon" sizes="192x192" href="./images/icons/icon-192x192.png">
-      <link rel="icon" sizes="512x512" href="./images/icons/icon-512x512.png">
-      <!-- Add to homescreen for Safari on iOS -->
-      <meta name="apple-mobile-web-app-capable" content="yes">
-      <meta name="apple-mobile-web-app-status-bar-style" content="black">
-      <meta name="apple-mobile-web-app-title" content="A zUIx website">
-      <link rel="apple-touch-icon-precomposed" href="./images/icons/icon-192x192.png">
-      <!--
+  <head>
+    <title>RadioSpini</title>
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Radio" />
+    <meta name="keywords" content="blog,radio,live,playlist,lifestyle" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Progressive Web App -->
+    <meta name="theme-color" content="white" />
+    <link rel="manifest" href="./manifest.json" />
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link rel="icon" sizes="192x192" href="./images/icons/icon-192x192.png" />
+    <link rel="icon" sizes="512x512" href="./images/icons/icon-512x512.png" />
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="A zUIx website" />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="./images/icons/icon-192x192.png"
+    />
+    <!--
          <link rel="mask-icon" href="./images/icons/desktop/safari-pinned-tab.svg" color="#5bbad5">
          -->
-      <!-- Tile color for Windows -->
-      <meta name="msapplication-TileImage" content="./images/icons/icon-192x192.png">
-      <meta name="msapplication-TileColor" content="#ffc40d">
-      <!-- Place favicon.ico in the root directory -->
-      <!--
+    <!-- Tile color for Windows -->
+    <meta
+      name="msapplication-TileImage"
+      content="./images/icons/icon-192x192.png"
+    />
+    <meta name="msapplication-TileColor" content="#ffc40d" />
+    <!-- Place favicon.ico in the root directory -->
+    <!--
          <link rel="icon" type="image/png" sizes="32x32" href="./images/icons/desktop/favicon-32x32.png">
          <link rel="icon" type="image/png" sizes="16x16" href="./images/icons/desktop/favicon-16x16.png">
          -->
-      <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
-      <!--
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
          <link rel="canonical" href="https://www.example.com/">
          -->
 
-     <!-- zuix.js https://github.com/zuixjs/zuix -->
-      <link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/zuix-dist@1.1.13">
-      <script src="https://cdn.jsdelivr.net/npm/zuix-dist@1.1.13"></script>
-      <script>
-         const config = zuix.store('config');
-         config.baseUrl = '/radiospini/';
-         config.resourcePath = '/radiospini/app/';
-      </script>
+    <style>
+      body {
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+      }
+      .round-button {
+        border-radius: 30%;
+        border: none;
+        outline: none;
+        vertical-align: middle;
+        opacity: 0.7;
+      }
+      .round-button i.material-icons {
+        font-size: 360%;
+      }
+      .round-button.share-button {
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        background: transparent;
+      }
+    </style>
+    <script>
+      function sharePage() {
+        const item = {
+          title: 'Radio #SpiniNelFianco',
+          text: '@RadioSpini la radio antipro!',
+          url: location.href,
+        };
+        if (navigator.share) {
+          navigator
+            .share(item)
+            .then(() => {
+              console.log('Document url shared.');
+            })
+            .catch(console.error);
+        } else {
+          // TODO: copy url to clipboard and popup a message
+          console.log('Sharing is not available in the current context.');
+        }
+      }
+    </script>
 
+    <!-- zuix.js https://github.com/zuixjs/zuix -->
+    <link
+      rel="preload"
+      as="script"
+      href="https://cdn.jsdelivr.net/npm/zuix-dist@1.1.13"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/zuix-dist@1.1.13"></script>
+    <script>
+      const config = zuix.store('config');
+      config.baseUrl = '/radiospini/';
+      config.resourcePath = '/radiospini/app/';
+    </script>
   </head>
 
-  <body style="overflow-y: hidden">
-    
-      <noscript>
-         Turn on JavaScript to access this site content.
-      </noscript>
-    
-      <main layout="column stretch-stretch" style="height: 100vh;">
-         <section layout="column center-center">
-           
-            <div z-load="components/spini-player" class="visible-on-ready"></div>
-           
-         </section>
-      </main>
-    
-   </body>
+  <body>
+    <noscript> Turn on JavaScript to access this site content. </noscript>
 
+    <main layout="column stretch-stretch" style="height: 100%">
+      <section layout="column center-center">
+        <div z-load="components/spini-player" class="visible-on-ready"></div>
+      </section>
+    </main>
+
+    <button class="round-button share-button" onclick="sharePage()">
+      <i class="material-icons">share</i>
+    </button>
+  </body>
 </html>

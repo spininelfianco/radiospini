@@ -1,20 +1,20 @@
 :host a {
-    text-decoration: none;
-    color: green;
+  text-decoration: none;
+  color: green;
 }
 label {
-    font-size: 70%;
-    text-transform: uppercase;
-    font-family: monospace;
-    font-weight: bold;
-    display: block;
-    opacity: 0.4;
-    margin-bottom: 6px;
+  font-size: 70%;
+  text-transform: uppercase;
+  font-family: monospace;
+  font-weight: bold;
+  display: block;
+  opacity: 0.4;
+  margin-bottom: 6px;
 }
 .info-text {
-    opacity: 0.8;
-    width: 360px;
-    /*
+  opacity: 0.8;
+  width: 360px;
+  /*
     width: 100%;
     max-width: 100%;
     overflow: hidden;
@@ -22,52 +22,72 @@ label {
     text-overflow: ellipsis;*/
 }
 .stream-info {
-    font-size: 180%;
-    min-width: 300px;
+  font-size: 180%;
+  min-width: 300px;
 }
 
 .controls {
-    min-width: 390px;
-    padding-left: 12px;
-    padding-right: 12px;
-    padding-top: 24px;
-    gap: 12px;
+  min-width: 390px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 24px;
+  gap: 12px;
 }
 .controls button {
-    border-radius: 30%;
-    border: none;
-    outline: none;
-    vertical-align: middle;
-    opacity: 0.7;
+  border-radius: 30%;
+  border: none;
+  outline: none;
+  vertical-align: middle;
+  opacity: 0.7;
 }
 .controls button i.material-icons {
-    font-size: 360%;
+  font-size: 360%;
 }
 .volume-level {
-    position: absolute;
-    top: -220px; left: 12px;
-    text-align: center;
-    background: inherit;
+  position: absolute;
+  top: -220px;
+  left: 12px;
+  text-align: center;
+  background: inherit;
 }
 .volume-tick {
-    cursor: pointer;
-    background-color: #aaaaaaaa;
+  cursor: pointer;
+  background-color: #aaaaaaaa;
 }
 .volume-tick .bar {
-    border: solid 1px;
-    border-radius: 4px;
-    width: 48px;
-    height: 16px;
-    margin: 1px;
+  border: solid 1px;
+  border-radius: 4px;
+  width: 40px;
+  height: 16px;
+  margin: 1px;
 }
 .volume-tick .bar.on {
-    background-color: chartreuse;
+  background-color: rgba(0, 255, 0, 0.7);
 }
 
 .cover-image {
-    width: 300px;
-    height: 300px;
-    position: relative;
-    border-radius: 4px; border: solid 1px gainsboro;
-    box-shadow: 0 0 20px 2px #aaaaaaaa;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  border-radius: 4px;
+  border: solid 1px gainsboro;
+  box-shadow: 0 0 20px 2px #aaaaaaaa;
+}
+
+/* Context Menu (playlist) */
+
+[z-field='menu'] {
+  max-height: 400px;
+  overflow-y: auto;
+}
+[z-field='menu'] label {
+  text-align: center;
+  color: initial;
+  background-color: #aaaaaaaa;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  padding: 4px;
+}
+[z-field='menu'] button {
+  cursor: pointer;
 }
