@@ -19,14 +19,14 @@ function themeSetup() {
   function toggleTheme(ev) {
     const checked = ev
       ? toggle.checked()
-      : localStorage.getItem(storeKey) === 'true';
+      : localStorage.getItem(storeKey) !== 'true';
     !ev && toggle.checked(checked);
     checked ? doc.addClass(themeDark) : doc.removeClass(themeDark);
     document.documentElement.style.setProperty(
       'color-scheme',
       checked ? 'dark' : 'light'
     );
-    localStorage.setItem(storeKey, String(checked));
+    localStorage.setItem(storeKey, String(!checked));
   }
 }
 
