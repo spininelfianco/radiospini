@@ -23,19 +23,8 @@ function SpiniPlayer(cp) {
   let menuPlaylist;
   let disableRadio = false;
 
-  this.init = onInit;
   this.create = onCreate;
 
-  function onInit() {
-    zuix.using(
-      'style',
-      '@cdnjs/flex-layout-attribute/1.0.3/css/flex-layout-attribute.min.css'
-    );
-    zuix.using(
-      'style',
-      'https://fonts.googleapis.com/icon?family=Material+Icons&display=swap'
-    );
-  }
   function onCreate() {
     coverImage = this.field('cover');
     trackArtist = this.field('track-artist');
