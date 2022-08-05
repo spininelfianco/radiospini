@@ -4,7 +4,7 @@
   "description": "#RadioSpini #SpiniNelFianco",
   "private": true,
   "scripts": {
-    "start": "http-server --cors ."
+    "start": "http-server --cors --path radiospini ."
   },
   "license": "MIT",
   "homepage": "https://github.com/weedmob",
@@ -13,6 +13,6 @@
     "url": "https://github.com/weedmob/radiospini"
   },
   "devDependencies": {
-    "http-server": "^14.1.1"
+    "http-server-subpath": "^0.10.1"
   }
 }
