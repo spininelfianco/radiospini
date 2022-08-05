@@ -11,6 +11,7 @@ body {
   overflow: hidden;
 }
 .round-button {
+  cursor: pointer;
   border-radius: 30%;
   border: none;
   outline: none;

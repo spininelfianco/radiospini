@@ -42,7 +42,10 @@ function SpiniPlayer(cp) {
     trackTitle = this.field('track-title');
     audioPlayer = this.field('player').get();
     playButton = this.field('btn-play').on({
-      click: () => audioPlayer.play(),
+      click: () => {
+        audioPlayer.load();
+        audioPlayer.play();
+      },
     });
     pauseButton = this.field('btn-pause').on({
       click: () => audioPlayer.pause(),
@@ -129,14 +132,12 @@ function SpiniPlayer(cp) {
     audioPlayer.onplay = refreshDisplay;
     audioPlayer.onpause = refreshDisplay;
     audioPlayer.onerror = refreshDisplay;
-    audioPlayer.onabort = () => {
-      console.log('Play interrupted...');
-    };
-    audioPlayer.onloadstart = () => {
-      console.log('Trying to play...');
-    };
-    audioPlayer.onplaying = () => {
-      console.log('Started playing...');
+    audioPlayer.onloadedmetadata = () => {
+      audioPlayer.controls = audioPlayer.seekable.end(0) !== Infinity;
+      if (audioPlayer.controls) {
+        playButton.hide();
+        pauseButton.hide();
+      }
     };
     audioPlayer.volume = 0.5;
     startRadio();
@@ -147,6 +148,7 @@ function SpiniPlayer(cp) {
     radioDisplay.cover = defaultDisplay.cover;
     radioDisplay.artist = defaultDisplay.artist;
     radioDisplay.title = defaultDisplay.title;
+    audioPlayer.controls = false;
     audioPlayer.src = defaultDisplay.url;
     audioPlayer.play();
     getStreamInfo();
@@ -211,12 +213,14 @@ function SpiniPlayer(cp) {
     trackArtist.html(radioDisplay.artist);
     trackTitle.html(radioDisplay.title);
     // refresh buttons
-    if (audioPlayer.paused) {
-      pauseButton.hide();
-      playButton.show();
-    } else {
-      pauseButton.show();
-      playButton.hide();
+    if (!audioPlayer.controls) {
+      if (audioPlayer.paused) {
+        pauseButton.hide();
+        playButton.show();
+      } else {
+        pauseButton.show();
+        playButton.hide();
+      }
     }
     if (audioPlayer.muted) {
       muteButton.hide();
