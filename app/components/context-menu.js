@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * MenuOverlay class.
+ * zuix.js - MenuOverlay class.
  * @constructor
  * @this {ContextController}
  */
@@ -25,7 +25,7 @@ function ContextMenu(cp) {
             }
           }
         });
-    zuix.load('@lib/controllers/gesture-helper', {
+    zuix.load('controllers/gesture-helper', {
       view: view,
       on: {
         'gesture:pan': function(e, tp) {
