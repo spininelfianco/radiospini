@@ -43,55 +43,6 @@
          <link rel="canonical" href="https://www.example.com/">
          -->
 
-    <style>
-      body {
-        height: 100vh;
-        margin: 0;
-        padding: 0;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -o-user-select: none;
-        user-select: none;
-      }
-      .round-button {
-        border-radius: 30%;
-        border: none;
-        outline: none;
-        vertical-align: middle;
-        opacity: 0.7;
-      }
-      .round-button i.material-icons {
-        font-size: 360%;
-      }
-      .round-button.share-button {
-        position: absolute;
-        top: 6px;
-        right: 6px;
-        background: transparent;
-      }
-    </style>
-    <script>
-      function sharePage() {
-        const item = {
-          title: 'Radio #SpiniNelFianco',
-          text: '@RadioSpini la radio antipro!',
-          url: location.href,
-        };
-        if (navigator.share) {
-          navigator
-            .share(item)
-            .then(() => {
-              console.log('Document url shared.');
-            })
-            .catch(console.error);
-        } else {
-          // TODO: copy url to clipboard and popup a message
-          console.log('Sharing is not available in the current context.');
-        }
-      }
-    </script>
-
     <!-- zuix.js https://github.com/zuixjs/zuix -->
     <link
       rel="preload"
@@ -103,6 +54,7 @@
       const config = zuix.store('config');
       config.baseUrl = '/radiospini/';
       config.resourcePath = '/radiospini/app/';
+      setTimeout(() => zuix.$(document.body).css('visibility', 'visible'), 500);
     </script>
   </head>
 
@@ -115,8 +67,13 @@
       </section>
     </main>
 
+    <input class="theme-toggle" type="checkbox" checked />
+
     <button class="round-button share-button" onclick="sharePage()">
       <i class="material-icons">share</i>
     </button>
   </body>
+
+  <link href="index.css" rel="stylesheet" />
+  <script src="index.js"></script>
 </html>
