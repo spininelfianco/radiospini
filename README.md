@@ -6,11 +6,16 @@
 
 https://weedmob.github.io/radiospini/
 
+## Online IDE / Editor
+
+https://stackblitz.com/github/weedmob/radiospini
+
 ## Utilizzo
 
-1. Copiare la cartella `/app` contenente il componente `radiospini` 
+1. Copiare la cartella `/app` contenente il componente `radiospini`
 
-2. Includere la libreria *zuix.js* prima della chiusura del tag `head` e configurare i percorsi del sito
+2. Includere la libreria _zuix.js_ prima della chiusura del tag `head` e configurare i percorsi del sito
+
 ```html
 <head>
 ...
