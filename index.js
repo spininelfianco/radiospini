@@ -31,10 +31,10 @@ function themeSetup() {
 }
 
 function sharePage(playerInfo) {
-  let text = '📻 @RadioSpini la radio antipro!';
+  let text = '📻 @RadioSpini la radio antipro!\n';
   if (playerInfo) {
     text +=
-      '\nON AIR: ' +
+      'ON AIR: ' +
       playerInfo.artist +
       ', ' +
       playerInfo.title +
@@ -43,7 +43,7 @@ function sharePage(playerInfo) {
       '://' +
       location.host +
       playerInfo.cover +
-      '\n👇 👇 👇 👇';
+      '\n👇 👇 👇 👇\n';
   }
   const item = {
     title: 'Radio #SpiniNelFianco',
