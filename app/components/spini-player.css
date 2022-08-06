@@ -42,8 +42,12 @@ label {
 }
 
 .controls button {
+  width: 56px;
+  height: 56px;
+  padding-left: 2px;
+  padding-right: 2px;
+  border: solid 2px transparent;
   border-radius: 30%;
-  border: none;
   outline: none;
   vertical-align: middle;
   opacity: 0.7;
@@ -51,10 +55,18 @@ label {
 .controls button i.material-icons {
   font-size: 360%;
 }
+.blink-border {
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
 .volume-level {
   position: absolute;
   top: -214px;
-  left: 12px;
+  left: 10px;
   text-align: center;
   background: inherit;
 }

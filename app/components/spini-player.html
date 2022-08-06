@@ -39,8 +39,8 @@
         <a href="https://twitter.com/RadioSpini" target="_blank">@RadioSpini</a>
       </div>
 
-      <button #btn-play style="border: solid 1px limegreen">
-        <i class="material-icons" style="color: limegreen">play_arrow</i>
+      <button #btn-play style="border-color: limegreen" class="blink-border">
+        <i class="material-icons">play_arrow</i>
       </button>
       <button #btn-pause>
         <i class="material-icons">pause</i>
@@ -58,7 +58,10 @@
           <i class="material-icons">volume_off</i>
         </button>
 
-        <div #btn-volume-set class="volume-level">
+        <div
+          #btn-volume-set
+          class="volume-level animate__animated animate__fadeIn animate__faster"
+        >
           <div class="volume-tick" volume="10"><div class="bar"></div></div>
           <div class="volume-tick" volume="8"><div class="bar"></div></div>
           <div class="volume-tick" volume="9"><div class="bar"></div></div>

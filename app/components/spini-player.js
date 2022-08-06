@@ -51,6 +51,7 @@ function SpiniPlayer(cp) {
         audioPlayer.muted = false;
         volumeControl.show();
         refreshDisplay();
+        volumeButton.get().focus();
       },
     });
     volumeControl = this.field('btn-volume-set').hide();
@@ -60,12 +61,12 @@ function SpiniPlayer(cp) {
           ? volumeControl.hide()
           : volumeControl.show();
       },
+      focusout: () => setTimeout(() => volumeControl.hide(), 200),
     });
     volumeControl.find('.volume-tick').on({
       pointerdown: (event, $el) => {
         audioPlayer.volume = +$el.attr('volume') / 10;
         refreshDisplay();
-        setTimeout(() => volumeControl.hide(), 300);
       },
     });
     menuButton = this.field('btn-menu').on({
@@ -93,7 +94,9 @@ function SpiniPlayer(cp) {
         });
         zuix.context('my-menu', (contextMenu) => {
           contextMenu.$.one('close', () => {
-            //startRadio();
+            if (audioPlayer.src.length > 0) {
+              audioPlayer.play();
+            }
           });
           contextMenu.$.find('button').on({
             click: (e, $el) => {
