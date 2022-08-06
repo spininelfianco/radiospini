@@ -22,6 +22,7 @@ function SpiniPlayer(cp) {
   let menuButton;
   let menuPlaylist;
   let disableRadio = false;
+  let delayedOperation;
 
   this.create = onCreate;
 
@@ -148,6 +149,7 @@ function SpiniPlayer(cp) {
   }
 
   function getStreamInfo() {
+    clearTimeout(delayedOperation);
     const dataUrl =
       'https://corsproxy.io/?https://zenoplay.zenomedia.com/api/zenofm/nowplaying/p2m7uyb1sxhvv';
     fetch(dataUrl)
@@ -165,16 +167,17 @@ function SpiniPlayer(cp) {
           refreshDisplay();
           getArtwork(artist, title);
         }
-        setTimeout(getStreamInfo, 10000);
+        delayedOperation = setTimeout(getStreamInfo, 10000);
       })
       .catch((err) => {
         console.log(err);
         if (disableRadio) return;
         // TODO: report error
-        setTimeout(getStreamInfo, 10000);
+        delayedOperation = setTimeout(getStreamInfo, 10000);
       });
   }
   function getArtwork(artist, title, retry) {
+    clearTimeout(delayedOperation);
     if (retry == null) retry = 1;
     const q = encodeURI(`${artist},${title}`).replace(/&/g, '');
     const artworkUrl = `https://corsproxy.io/?https://player.zenomedia.com/api/utils/artwork?metadata=${q}`;
@@ -191,7 +194,10 @@ function SpiniPlayer(cp) {
         console.log(err);
         if (disableRadio) return;
         if (retry < 4) {
-          setTimeout(() => getArtwork(artist, title, ++retry), 2000);
+          delayedOperation = setTimeout(
+            () => getArtwork(artist, title, ++retry),
+            2000
+          );
         }
         refreshDisplay();
       });

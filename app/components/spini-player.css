@@ -33,6 +33,14 @@ label {
   padding-top: 24px;
   gap: 12px;
 }
+
+@media only screen and (max-width: 680px) {
+  .controls {
+    position: absolute;
+    bottom: 0;
+  }
+}
+
 .controls button {
   border-radius: 30%;
   border: none;
@@ -45,7 +53,7 @@ label {
 }
 .volume-level {
   position: absolute;
-  top: -220px;
+  top: -214px;
   left: 12px;
   text-align: center;
   background: inherit;

@@ -1,10 +1,15 @@
 <div layout="rows stretch-center" style="gap: 24px">
-  <div>
+  <div style="min-height: 300px; position: relative">
     <img #cover class="cover-image" /><br />
-    <audio #player>Your browser does not support the audio element.</audio>
+    <audio
+      #player
+      style="position: absolute; left: 1px; bottom: 6px; opacity: 0.7"
+    >
+      Your browser does not support the audio element.
+    </audio>
   </div>
 
-  <div self="size-x1" layout="columns justify-center">
+  <div self="size-x1" layout="columns justify-center" style="min-height: 300px">
     <div class="stream-info">
       <div>
         <label class="accent">Artist</label>
@@ -34,11 +39,15 @@
         <a href="https://twitter.com/RadioSpini" target="_blank">@RadioSpini</a>
       </div>
 
-      <button #btn-play>
-        <i class="material-icons">play_arrow</i>
+      <button #btn-play style="border: solid 1px limegreen">
+        <i class="material-icons" style="color: limegreen">play_arrow</i>
       </button>
       <button #btn-pause>
         <i class="material-icons">pause</i>
+      </button>
+
+      <button #btn-menu>
+        <i class="material-icons">queue_music</i>
       </button>
 
       <div style="position: relative">
@@ -65,10 +74,6 @@
           >
         </div>
       </div>
-
-      <button #btn-menu>
-        <i class="material-icons">queue_music</i>
-      </button>
     </div>
   </div>
 </div>
