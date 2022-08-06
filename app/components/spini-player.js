@@ -5,7 +5,12 @@ function SpiniPlayer(cp) {
   let trackTitle;
   const defaultDisplay = {
     cover:
-      zuix.store('config').resourcePath + 'components/spini-player/cover.png',
+      location.protocol +
+      '//' +
+      location.host +
+      (location.port ? ':' + location.port : '') +
+      zuix.store('config').resourcePath +
+      'components/spini-player/cover.png',
     artist: '@RadioSpini',
     title: 'Radio SpiniNelFianco',
     url: 'https://stream.zeno.fm/rcu55zb1sxhvv',
@@ -76,7 +81,7 @@ function SpiniPlayer(cp) {
       refreshDisplay();
       initPlayer();
     });
-    this.expose({getInfo: () => radioDisplay});
+    this.expose({ getInfo: () => radioDisplay });
   }
 
   function buildMenuPlaylist(menu, callback) {

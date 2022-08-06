@@ -39,9 +39,6 @@ function sharePage(playerInfo) {
       ', ' +
       playerInfo.title +
       '\n' +
-      location.protocol +
-      '://' +
-      location.host +
       playerInfo.cover +
       '\n👇 👇 👇 👇\n';
   }
