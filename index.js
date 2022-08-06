@@ -30,10 +30,20 @@ function themeSetup() {
   }
 }
 
-function sharePage() {
+function sharePage(playerInfo) {
+  let text = '@RadioSpini la radio antipro!';
+  if (playerInfo) {
+    text +=
+      '\nON AIR: ' +
+      playerInfo.artist +
+      ', ' +
+      playerInfo.title +
+      '\n' +
+      playerInfo.cover;
+  }
   const item = {
     title: 'Radio #SpiniNelFianco',
-    text: '@RadioSpini la radio antipro!',
+    text,
     url: location.href,
   };
   if (navigator.share) {

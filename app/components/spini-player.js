@@ -76,6 +76,7 @@ function SpiniPlayer(cp) {
       refreshDisplay();
       initPlayer();
     });
+    this.expose({getInfo: () => radioDisplay});
   }
 
   function buildMenuPlaylist(menu, callback) {

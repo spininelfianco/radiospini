@@ -96,16 +96,16 @@
     <main
       layout="column stretch-stretch"
       style="height: 100%"
-      class="animate__animated animate__fadeIn animate__slower"
+      class="animate__animated animate__fadeIn animate__slow"
     >
       <section layout="column center-center">
-        <div z-load="components/spini-player" class="visible-on-ready"></div>
+        <div z-load="components/spini-player" z-context="radio-player" class="visible-on-ready"></div>
       </section>
     </main>
 
     <input class="theme-toggle" type="checkbox" />
 
-    <button class="round-button share-button" onclick="sharePage()">
+    <button class="round-button share-button" onclick="sharePage(zuix.context('radio-player').getInfo())">
       <i class="material-icons">share</i>
     </button>
   </body>
