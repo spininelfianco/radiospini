@@ -21,17 +21,7 @@ function themeSetup() {
       ? toggle.checked()
       : localStorage.getItem(storeKey) !== 'true';
     !ev && toggle.checked(checked);
-    if (checked) {
-      doc.addClass(themeDark);
-      doc
-        .find('main')
-        .css('background-image', 'url("images/radio/theme-dark.png")');
-    } else {
-      doc.removeClass(themeDark);
-      doc
-        .find('main')
-        .css('background-image', 'url("images/radio/theme-light.png")');
-    }
+    checked ? doc.addClass(themeDark) : doc.removeClass(themeDark);
     document.documentElement.style.setProperty(
       'color-scheme',
       checked ? 'dark' : 'light'
