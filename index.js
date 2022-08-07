@@ -21,7 +21,17 @@ function themeSetup() {
       ? toggle.checked()
       : localStorage.getItem(storeKey) !== 'true';
     !ev && toggle.checked(checked);
-    checked ? doc.addClass(themeDark) : doc.removeClass(themeDark);
+    if (checked) {
+      doc.addClass(themeDark);
+      doc
+        .find('main')
+        .css('background-image', 'url("images/radio/theme-dark.png")');
+    } else {
+      doc.removeClass(themeDark);
+      doc
+        .find('main')
+        .css('background-image', 'url("images/radio/theme-light.png")');
+    }
     document.documentElement.style.setProperty(
       'color-scheme',
       checked ? 'dark' : 'light'
