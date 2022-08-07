@@ -50,6 +50,10 @@ label {
   outline: none;
   vertical-align: middle;
   opacity: 0.7;
+  box-shadow: 0 0 5px 1px;
+}
+.controls button:active {
+  box-shadow: 0 0 2px 0;
 }
 .controls button i.material-icons {
   font-size: 56px;
