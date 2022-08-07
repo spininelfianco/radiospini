@@ -42,10 +42,9 @@ label {
 }
 
 .controls button {
-  width: 56px;
-  height: 56px;
-  padding-left: 2px;
-  padding-right: 2px;
+  width: auto;
+  height: auto;
+  padding: 0;
   border: solid 2px transparent;
   border-radius: 30%;
   outline: none;
