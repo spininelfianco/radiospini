@@ -10,6 +10,7 @@ body {
   visibility: hidden;
   overflow: hidden;
 }
+/*
 main {
   background-image: url('images/radio/theme-light.png');
   background-size: cover;
@@ -18,6 +19,7 @@ main {
 .theme-dark main {
   background-image: url('images/radio/theme-dark.png');
 }
+*/
 .round-button {
   cursor: pointer;
   border-radius: 30%;
