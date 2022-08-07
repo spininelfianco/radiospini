@@ -11,8 +11,12 @@ body {
   overflow: hidden;
 }
 main {
+  background-image: url('images/radio/theme-light.png');
   background-size: cover;
   background-repeat: no-repeat;
+}
+.theme-dark main {
+  background-image: url('images/radio/theme-dark.png');
 }
 .round-button {
   cursor: pointer;
