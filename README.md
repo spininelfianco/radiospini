@@ -4,7 +4,7 @@
 
 ## DEMO
 
-https://weedmob.github.io/radiospini/
+https://spininelfianco.github.io/radiospini/
 
 ## Online IDE / Editor
 
