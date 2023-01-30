@@ -10,7 +10,7 @@
   "homepage": "https://github.com/weedmob",
   "repository": {
     "type": "git",
-    "url": "https://github.com/weedmob/radiospini"
+    "url": "https://github.com/spininelfianco/radiospini"
   },
   "devDependencies": {
     "http-server-subpath": "^0.10.1"
