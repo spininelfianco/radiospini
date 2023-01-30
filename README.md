@@ -2,7 +2,7 @@
 
 `#RadioSpini #SpiniNelFianco`
 
-## LIVE ON
+## LIVE AT
 
 https://spininelfianco.github.io/radiospini/
 
