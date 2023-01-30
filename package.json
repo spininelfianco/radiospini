@@ -7,7 +7,7 @@
     "start": "http-server --cors --path radiospini ."
   },
   "license": "MIT",
-  "homepage": "https://github.com/weedmob",
+  "homepage": "https://github.com/spininelfianco",
   "repository": {
     "type": "git",
     "url": "https://github.com/spininelfianco/radiospini"
